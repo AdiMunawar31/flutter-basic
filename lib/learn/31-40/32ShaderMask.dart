@@ -43,13 +43,21 @@
 //                           Container(color: Colors.indigo[900], child: myTab))),
 //               body: TabBarView(children: [
 //                 Center(
-//                     child: Text(
-//                   "Tracks Page",
-//                   style: TextStyle(
-//                       color: Colors.white,
-//                       fontSize: 26,
-//                       fontWeight: FontWeight.bold),
-//                 )),
+//                   child: ShaderMask(
+//                     shaderCallback: (rectangle) {
+//                       return LinearGradient(
+//                               colors: [Colors.black, Colors.transparent],
+//                               begin: Alignment.topCenter,
+//                               end: Alignment.bottomCenter)
+//                           .createShader(Rect.fromLTRB(
+//                               0, 0, rectangle.width, rectangle.height));
+//                     },
+//                     blendMode: BlendMode.dstIn,
+//                     child: Image(
+//                       image: AssetImage('images/pp.jpg'),
+//                     ),
+//                   ),
+//                 ),
 //                 Center(
 //                     child: Text(
 //                   "Artists Page",
